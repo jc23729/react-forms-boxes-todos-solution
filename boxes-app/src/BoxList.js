@@ -2,19 +2,23 @@ import React, { useState } from "react";
 import Box from "./Box";
 import NewBoxForm from "./NewBoxForm";
 
+{
+  /*BoxList this state contains all of the boxes here  
+This component should render all of the Box components with the NewBoxForm component
 
-
+*/
+}
 
 function BoxList() {
   const [boxes, setBoxes] = useState([]);
-  const add = boxObj => {
-    setBoxes(boxes => [...boxes, boxObj]);
+  const add = (boxObj) => {
+    setBoxes((boxes) => [...boxes, boxObj]);
   };
-  const remove = id => {
-    setBoxes(boxes => boxes.filter(box => box.id !== id));
+  const remove = (id) => {
+    setBoxes((boxes) => boxes.filter((box) => box.id !== id));
   };
 
-  const boxComponents = boxes.map(box => (
+  const boxComponents = boxes.map((box) => (
     <Box
       key={box.id}
       id={box.id}
